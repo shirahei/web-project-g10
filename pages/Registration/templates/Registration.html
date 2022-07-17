@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Registration</title>
+    {% include('links.html') %}
+
+</head>
+
+<body>
+<div class="grid-container form-grid">
+    <header id="header">
+        <nav>
+            {% include('nav.html') %}
+        </nav>
+    </header>
+
+    <form name="register" action="home.html" method="post" class="inner-form-grid" onsubmit="return validateMyForm();">
+        <!--changeeeeeeeee-->
+        <h1 id="title">Registration</h1>
+
+        <div id="item1">
+            <b><label for="Fullname">Full name:</label></b>
+            <input type="text" id="Fullname" name="Fullname" required/>
+        </div>
+
+        <div id="item2">
+
+            <b><label for="email">Email:</label></b>
+            <input type="email" id="email" name="email" required>
+            <br>
+        </div>
+
+        <div id="item3">
+            <b><label for="neighborhood">Choose a neighborhood:</label></b>
+            <select name="neighborhood" id="neighborhood">
+                <option value="neighborhoodB">neighborhood B</option>
+                <option value="neighborhoodC">neighborhood C</option>
+                <option value="neighborhoodD">neighborhood D</option>
+                <option value="OldNeighborhoodV">Old neighborhood V</option>
+            </select>
+            <br>
+        </div>
+
+        <div id="item4">
+            <b><label for="password">Password:</label></b>
+            <input type="password" id="password" name="password" onkeyup='check();' required><br>
+        </div>
+
+        <div id="item5">
+            <b><label for="CheckPassword">Confirm Password:</label></b>
+            <input type="password" id="confirm_password" name="confirm_password" onkeyup='check();' required><br>
+        </div>
+
+        <span id='message'></span><br>
+
+
+        <div id="item8">
+            <b><label for="Instagram">Instagram URL:</label></b>
+            <input type="text" id="Instagram URL" name="Instagram URL"/>
+        </div>
+
+        <input id="item6" type="submit" name="submit" value="Submit" class="submitButton">
+
+    </form>
+
+
+</div>
+</body>
+
+</html>
+
+

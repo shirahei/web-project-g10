@@ -1,55 +1,47 @@
 from flask import Flask
-from flask import render_template, request, redirect, url_for
-from datetime import timedelta
-from flask import request, session, jsonify
-from flask import session
-import time
-import requests
-import mysql.connector
 
+###### App setup
 app = Flask(__name__)
-app.static_folder = 'static'
+app.config.from_pyfile('settings.py')
 
+###### Pages
+## home
+from pages.home.home import home
+app.register_blueprint(home)
 
-@app.route('/')
-def hello_world():  # put application's code here
-    return redirect(url_for('home_func'))
+## about
+from pages.about.about import about
+app.register_blueprint(about)
 
+## lendingitem
+from pages.lendingitem.lendingitem import lendingitem
+app.register_blueprint(lendingitem)
 
-@app.route('/home.html')
-def home_func():
-    return render_template('home.html')
+## login
+from pages.login.login import login
+app.register_blueprint(login)
 
+## paymentN
+from pages.paymentN.paymentN import paymentN
+app.register_blueprint(paymentN)
 
-@app.route('/lendingItem.html')
-def lendingItem_func():
-    return render_template('lendingItem.html')
+## Profile
+from pages.Profile.Profile import Profile
+app.register_blueprint(Profile)
 
+## Registration
+from pages.Registration.Registration import Registration
+app.register_blueprint(Registration)
 
-@app.route('/login.html')
-def login_func():
-    return render_template('login.html')
+## search
+from pages.search.search import search
+app.register_blueprint(search)
 
+## Page error handlers
+# from pages.page_error_handlers.page_error_handlers import page_error_handlers
+# app.register_blueprint(page_error_handlers)
 
-@app.route('/paymentN.html')
-def payment_func():
-    return render_template('paymentN.html')
-
-
-@app.route('/Profile.html')
-def profile_func():
-    return render_template('Profile.html')
-
-
-@app.route('/Registration.html')
-def registration_func():
-    return render_template('Registration.html')
-
-
-@app.route('/search.html')
-def search_func():
-    return render_template('search.html')
-
-
-if __name__ == '__main__':
-    app.run()
+###### Components
+## Main menu
+# from components.main_menu.main_menu import main_menu
+# app.register_blueprint(main_menu)
