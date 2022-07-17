@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    {% include('links.html') %}
+    <title>search</title>
+</head>
+
+<body>
+<div class="grid-container form-grid">
+    <header id="header">
+        <nav>
+            {% include('nav.html') %}
+        </nav>
+    </header>
+
+    <form action="home.html" method="POST" class="inner-form-grid">
+        <h1 id="title">Product Search</h1>
+
+        <div id="item1">
+
+            <select data-trigger="" name="choices-single-defaul">
+                <option placeholder="" value="">Category</option>
+                <option>Furniture</option>
+                <option>Kitchenware</option>
+                <option>Tools</option>
+                <option>Appliances</option>
+            </select>
+
+        </div>
+
+        <div id="item2">
+
+
+            <div id="item3">
+                <select data-trigger="" name="choices-single-defaul">
+                    <option placeholder="" value="">Condition</option>
+                    <option>New</option>
+                    <option>Used</option>
+                </select>
+            </div>
+
+        </div>
+
+        <input id="item5" type="submit" value="Submit" class="submitButton">
+    </form>
+
+
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+    <div class="chat-popup" id="myForm">
+        <form action="home.html" class="form-container">
+            <h1>Chat</h1>
+
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

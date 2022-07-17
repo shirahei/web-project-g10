@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include('links.html') %}
+    <title>home page</title>
+</head>
+
+<body>
+<div class="grid-container home-grid">
+    <header id="header">
+        <nav>
+            {% include('nav.html') %}
+        </nav>
+    </header>
+
+
+    <div id="home_img">
+        <figure>
+            <img src="{{ url_for('static',filename='home_img.png') }}">
+        </figure>
+    </div>
+
+
+    <div id="home_text">
+        <span style="line-height:200%">Give and Take Have Never Been So </span>
+        <span class="easyWord">Easy</span>
+        <br><br>
+        <a href="search.html">
+            <button>
+                Find an item
+            </button>
+        </a>
+
+        <a href="lendingItem.html">
+            <button>
+                Upload an item
+            </button>
+        </a>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,338 @@
+
+
+:root {
+    --pinkOrange: #f4a89576;
+    --scussors_purple: #f066a2;
+    --body: #fcd6b3;
+    --cream: #fdf8e6;
+    --hatBrown: #d29e6b;
+    --torkis: #66f0b4;
+
+}
+
+* {
+    font-family: main_font;
+    color: #f066a2;
+    box-sizing: border-box;
+}
+
+.active{
+    color:rgba(36, 13, 6, 0.751);
+}
+
+
+@font-face {
+    font-family: menu_font;
+
+}
+
+@font-face {
+    font-family: main_font;
+
+}
+
+
+span {
+    font-size: 60px;
+    text-align: center;
+}
+
+button {
+    font-size: 17px;
+}
+
+.submitButton {
+    font-size: 17px;
+}
+
+div {
+    padding: 8px;
+    text-align: center;
+    font-size: 20px;
+    gap: 20px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--cream);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.grid-container {
+    display: grid;
+
+}
+
+.home-grid {
+    grid-template-areas:
+        'header header header'
+        'home_text home_text home_img';
+}
+
+
+#header {
+    grid-area: header;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--pinkOrange);
+}
+
+#home_img {
+    grid-area: home_img;
+}
+
+#home_text {
+    grid-area: home_text;
+    font-size: 30px;
+    margin: 20px;
+    padding:20px;
+}
+
+.constructor {
+    width: 22px;
+    height: 22px;
+}
+
+
+/*the menu in a one line and proprties*/
+li,
+a {
+    display: inline;
+    margin: 0 2vw 0 0;
+    font-family: menu_font;
+    font-size: xx-large;
+    text-decoration: none;
+    color: var(--hatBrown);
+}
+
+/*no points at the menu links*/
+.navLinks {
+    list-style: none;
+}
+
+  .easyWord {
+    display: inline;  
+    position: relative;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgb(210, 14, 112), rgb(232, 80, 161), rgb(186, 85, 121));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(169, 64, 125, 0);
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+
+button {
+    height: 5vh;
+    width: 20vw;
+    border-radius: 20px;
+}
+
+
+.form-grid {
+    row-gap: 3vh;
+    grid-template-areas:
+        'header'
+        'item1'
+        'item2'
+        'item3'
+        'item4'
+        'item5'
+        'item6'
+        'item7'
+    ;
+}
+
+
+#item1 {
+    grid-area: item1;
+
+}
+
+#item2 {
+    grid-area: item2;
+
+}
+
+#item3 {
+    grid-area: item3;
+
+}
+
+#item4 {
+    grid-area: item4;
+
+}
+
+#item5 {
+    grid-area: item5;
+
+}
+
+#item6 {
+    grid-area: item6;
+
+}
+
+#item7 {
+    grid-area: item7;
+
+}
+
+#item8 {
+    grid-area: item8;
+
+}
+
+#item9 {
+    grid-area: item9;
+
+}
+
+
+
+.animation {
+    /*integram */
+    width: 40px;
+    height: 40px;
+    animation: jump .5s linear alternate 10;
+    vertical-align: middle;
+    margin-inline: 10px;
+}
+
+
+@keyframes jump {
+    0% {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    }
+
+    40% {
+        transform: translate3d(0, 30%, 0) scale3d(.7, 1.5, 1);
+    }
+
+    100% {
+        transform: translate3d(0, 100%, 0) scale3d(1.5, .7, 1);
+    }
+}
+
+
+
+
+      /* Button used to open the chat form - fixed at the bottom of the page */
+      .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+    
+      }
+   
+      /* The popup chat - hidden by default */
+      .chat-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+      }
+
+      /* Add styles to the form container */
+      .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+        
+      }
+
+      /* Full-width textarea */
+      .form-container textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: white;
+        resize: none;
+        min-height: 200px;
+      }
+
+      /* When the textarea gets focus, do something */
+      .form-container textarea:focus {
+        background-color: white;
+        outline: none;
+      }
+
+      /* Set a style for the submit/send button */
+      .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+        
+      }
+
+      /* Add a red background color to the cancel button */
+      .form-container .cancel {
+        background-color: red;
+      }
+
+      .active{
+
+      }
+
+      /* Add some hover effects to buttons */
+      .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+      }
+
+
+      @media only screen and (max-width: 800px) {
+        .home-grid {
+            margin-right: 11vw;
+            grid-template-columns: 100%;
+            row-gap: 4vh;
+            grid-template-areas:
+            'header'
+             'home_text' 
+            'home_img';
+        }
+
+        li,
+        a {
+            display: inline;
+            margin: 0 2vw 0 0;
+            font-family: menu_font;
+            font-size:medium;
+            text-decoration: none;
+            color: var(--hatBrown);
+        }
+
+    }

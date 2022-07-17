@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include('links.html') %}
+    <title>Item Lending</title>
+<style></style>
+</head>
+
+
+<body>
+    <div class="grid-container form-grid">
+        <header id="header">
+            <nav>
+                {% include('nav.html') %}
+            </nav>
+        </header>
+
+        <form action="home.html" method="POST" class="inner-form-grid">
+            <!--changeeeeeeeee-->
+            <h1 id="title">Product Lending</h1>
+            <div id="item1">
+                <label for="item_title">Item Title:</label>
+                <input type="text" id="title" name="title">
+            </div>
+
+            <div id="item2">
+                <label for="item_category">Category:</label>
+                <select name="item_category" id="item_category">
+                    <option value="Furniture">Furniture</option>
+                    <option value="kitchenware">Kitchenware</option>
+                    <option value="Tools">Tools</option>
+                    <option value="Appliances">Appliances</option>
+                </select>
+				
+
+            </div>
+			
+			<div id="item9">
+                <label for="item_category">Condition:</label>
+                <select name="item_category" id="item_category">
+                    <option value="New">New</option>
+                    <option value="Used">Used</option>
+                </select>
+            </div>
+
+            <div id="item3">
+                <label for="tem_description">Description:</label>
+                <textarea id="item_description" placeholder="Add your item description.." name="item_description"
+                    required></textarea>
+            </div>
+
+
+            <div id="item4">
+                <label for="item_image">Add image:</label>
+                <input type="file" id="item_image" name="item_image"><br><br>
+            </div>
+
+
+            <input id="item5" type="submit" value="Submit" class="submitButton">
+        </form>
+
+
+
+</body>
+
+</html>
