@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     {% include('links.html') %}
-    <title>Item Lending</title>
-    <style></style>
+    <title>Edit Item</title>
+    <link rel="stylesheet" href="../../static/css/base.css">
 </head>
 
 
@@ -18,28 +18,34 @@
     <h1 id="title">Edit Item</h1>
     <div class="container">
 
-        <form action="editItem/{{ item.item_id }}" method="post"  class="inner-form-grid">
+        <form action="{{ item.item_id }}" method="post"  class="inner-form-grid">
             <div class="item1">
                 <label>Title:</label>
-                <input type="text" value="{{ item.name }}"/>
+                <input type="text" name="title" value="{{ item.name }}"/>
             </div>
             <div class="item2">
                 <label>Category:</label>
                 <select name="category" id="item_category">
-                    <option value="Furniture" {{ item }}>Furniture</option>
-                    <option value="kitchenware">Kitchenware</option>
-                    <option value="Tools">Tools</option>
-                    <option value="Appliances">Appliances</option>
+                    <option value="Furniture" {% if item.category =='Furniture' %} selected {% endif %}>Furniture</option>
+                    <option value="kitchenware" {% if item.category =='kitchenware' %} selected {% endif %}>Kitchenware</option>
+                    <option value="Tools" {% if item.category =='Tools' %} selected {% endif %}>Tools</option>
+                    <option value="Appliances" {% if item.category =='Appliances' %} selected {% endif %}>Appliances</option>
                 </select>
             </div>
             <div class="item3">
-                <label>Title:</label>
-                <input type="text" value="{{ item.name }}"/>
+                <label>Description:</label>
+                <textarea id="item_description" placeholder="Add your item description.." name="description"
+                          required>{{ item.description }}</textarea>
             </div>
-            <div class="item4">
-                <label>Title:</label>
-                <input type="text" value="{{ item.name }}"/>
+            <div id="item9">
+                <label for="condition">Condition:</label>
+                <select name="condition" id="item_category">
+                    <option value="New" {% if item.condition_status =='New' %} selected {% endif %}>New</option>
+                    <option value="Used" {% if item.condition_status =='Used' %} selected {% endif %}>Used</option>
+                </select>
             </div>
+            <input id="item5" type="submit" value="Submit" class="submitButton">
+
 
         </form>
 
