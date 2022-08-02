@@ -16,7 +16,7 @@
 
     <div id="home_img">
         <figure>
-            <img src="{{ url_for('static',filename='home_img.png') }}">
+            <img src="static/media/img/home_img.png">
         </figure>
     </div>
 
@@ -25,17 +25,18 @@
         <span style="line-height:200%">Give and Take Have Never Been So </span>
         <span class="easyWord">Easy</span>
         <br><br>
-        <a href="search.html">
+        <a href="search">
             <button>
                 Find an item
             </button>
         </a>
-
-        <a href="lendingItem.html">
-            <button>
-                Upload an item
-            </button>
-        </a>
+        {% if session.get('email')!=None %}
+            <a href="lendingitem">
+                <button>
+                    Upload an item
+                </button>
+            </a>
+        {% endif %}
     </div>
 
 </div>

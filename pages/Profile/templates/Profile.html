@@ -10,8 +10,6 @@
         }
     </style>
 </head>
-
-
 <body>
 <div class="grid-container form-grid">
     <header id="header">
@@ -19,27 +17,25 @@
             {% include('nav.html') %}
         </nav>
     </header>
-
-    <form action="home.html" method="POST" class="inner-form-grid">  <!--changeeeeeeeee-->
         <h1 id="title">Profile:</h1>
 
         <div id="item1">
             <b><label for="Fullname">Full name:</label></b>
             <br>
-            <br>
+            <b>{{ customer_profile.full_name }}</b>
         </div>
 
         <div id="item2">
             <b><label for="email">Email:</label></b>
             <br>
-            <br>
+            {{ customer_profile.email }}
         </div>
 
 
         <div id="item3">
             <b><label for="neighborhood">Neighborhood:</label></b>
-            <br>
-            <br>
+            <br/>
+           {{ customer_profile.neighbourhood }}
         </div>
 
         <div id="item4">
@@ -51,10 +47,9 @@
             <span class="fa fa-star"></span>
             <br>
         </div>
-    </form>
 
     <footer>
-        <a href="https://www.instagram.com/accounts/login/"><img src="../static_p/insta_icon.jpg" alt="insta_icon"
+        <a href="{{ customer_profile.insta_url }}" target="_blank"><img src="../../../static/media/img/insta_icon.jpg" alt="insta_icon"
                                                                  class="animation"></a>
         <footer>
 </body>

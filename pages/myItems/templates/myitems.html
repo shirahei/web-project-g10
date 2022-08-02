@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include('links.html') %}
+    <title>My Items</title>
+    <style></style>
+</head>
+
+
+<body>
+<div class="grid-container form-grid">
+    <header id="header">
+        <nav>
+            {% include('nav.html') %}
+        </nav>
+    </header>
+
+    <h1 id="title">My Items for sale</h1>
+    <div class="container">
+    {% if itemsList|length == 0 %}
+        <h2>You have no items for sale yet</h2>
+    {% else %}
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Condition</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in itemsList %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.condition_status }}</td>
+                    <td>{{ item.description }}</td>
+                    <td><img style="max-width:100px;" src="static/media/uploads/{{ item.png_url }}"/></td>
+                    <td><a href="editItem/{{ item.item_id }}">Edit</a></td>
+                    <td><a href="removeItem/{{ item.item_id }}">Remove</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    </div>
+
+
+
+</div>
+</body>
+
+</html>

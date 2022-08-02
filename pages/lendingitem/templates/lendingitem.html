@@ -15,8 +15,7 @@
         </nav>
     </header>
 
-    <form action="home.html" method="POST" class="inner-form-grid">
-        <!--changeeeeeeeee-->
+    <form action="uploadItem" method="POST" class="inner-form-grid" enctype="multipart/form-data">
         <h1 id="title">Product Lending</h1>
         <div id="item1">
             <label for="item_title">Item Title:</label>
@@ -36,15 +35,15 @@
         </div>
 
         <div id="item9">
-            <label for="item_category">Condition:</label>
-            <select name="item_category" id="item_category">
+            <label for="item_condition">Condition:</label>
+            <select name="item_condition" id="item_category">
                 <option value="New">New</option>
                 <option value="Used">Used</option>
             </select>
         </div>
 
         <div id="item3">
-            <label for="tem_description">Description:</label>
+            <label for="item_description">Description:</label>
             <textarea id="item_description" placeholder="Add your item description.." name="item_description"
                       required></textarea>
         </div>
