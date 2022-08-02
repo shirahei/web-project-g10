@@ -1,10 +1,16 @@
 <nav>
     <ul class="navLinks">
         <li><a href="home">Home Page</a></li>
-        <li><a href="login">Log in</a></li>
-        <li><a href="Profile">Profile</a></li>
+        {% if session.get('email')!= None %}
+        <li><a href="logout">Log out</a>
+        <br/>Hello , {{ session.get('fullName')}}</li>
+         <li><a href="Profile">Profile</a></li>
+         <li><a href="myitems">My items</a></li>
+          <li><a href="lendingitem">Lend Item</a></li>
+        {% else %}
+        <li><a href="login">Login</a></li>
+        {% endif %}
         <li><a href="search">Search Item</a></li>
-        <li><a href="lendingitem">Lend Item</a></li>
-        <li><a href="paymentN">Payment</a></li>
+
     </ul>
 </nav>
